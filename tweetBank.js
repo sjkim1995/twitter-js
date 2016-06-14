@@ -2,7 +2,7 @@ var _ = require("lodash");
 var data = [];
 
 function add (name, text) {
-  data.push({ name: name, text: text });
+  data.push({ name: name, text: text, id: String(data.length)});
 }
 
 function list () {
