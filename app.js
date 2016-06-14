@@ -1,7 +1,7 @@
 var Express = require('express');
 var Chalk = require('chalk');
 var Swig = require('swig');
-
+var index = require('./routes')
 var app = Express();
 
 app.listen(3000);
