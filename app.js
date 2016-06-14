@@ -1,7 +1,7 @@
 var Express = require('express');
 var Chalk = require('chalk');
 var Swig = require('swig');
-var index = require('./routes')
+var routes = require('./routes')
 var app = Express();
 
 app.listen(3000);
@@ -28,11 +28,8 @@ app.use(function (req, res, next) {
 	next();
 });
 
-var people = [{name: 'Full'}, {name: 'Stack'}, {name: 'Son'}];
-
-app.get("/", function (req, res){
-	res.render('index', {title: 'Hall of Fame', people: people});
-});
+app.use('/', routes);
+app.use(Express.static('public'));
 
 app.use(function(err, req, res, next) {
 	console.log('Error!', err);
